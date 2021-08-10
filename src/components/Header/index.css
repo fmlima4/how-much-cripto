@@ -1,0 +1,29 @@
+header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    transition: all ease 0.5s;
+    background: #fff;
+
+}
+
+header.darkMode {
+    background: #141414;
+}
+
+.darkMode{
+    height: 70px;
+    color: #fff;
+};
+
+.lightMode{
+    height: 70px;
+    color: #111;
+}
