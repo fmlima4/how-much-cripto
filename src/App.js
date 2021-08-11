@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css'
 import Crypto from './Crypto';
 import Cryptos from './components/Cryptos';
+import CurrencySelector from './components/CurrencySelector';
+
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
@@ -67,13 +69,12 @@ export default () => {
   });
 
   const[criptoList,setCriptoList] = useState([]);
-  const[darkMode,setDarkMode] = useState(true);
 
   useEffect(() => {
     const loadAll = async () =>{
       let list = await Crypto.getCriptosInfo();
-      setCriptoList(list); 
-
+      setCriptoList(list);
+    
     }
 
     loadAll();
@@ -91,7 +92,9 @@ export default () => {
           />
         </header>
         <div className="app--page">
-
+          <section className="lists">
+            <CurrencySelector/> 
+          </section>
           <section className="lists">
             {criptoList.map((item,key)=>(
               <ul>
