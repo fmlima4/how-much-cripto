@@ -11,5 +11,19 @@ export default {
         let info = {}
         info = await basicFetch(`last/USD-BRL,EUR-BRL,BTC-BRL`);
         return info
+    },
+
+    format: async (value) => {
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          });
+        
+        return formatter.format(value);
     }
+
 }
+
+
+
+// Create our number formatter.
