@@ -30,7 +30,24 @@ header.darkTheme {
   color: #121620 !important;
 }
 
+.app--page {
+  max-width: 1400px;
+  margin: 3% auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.app--info {
+  margin: 3% auto;
+  max-width: 89%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .lists {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

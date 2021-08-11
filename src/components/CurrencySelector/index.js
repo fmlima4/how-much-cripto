@@ -33,9 +33,9 @@ export default (item) => {
     };
 
     const handleAmountChange = (event) => {
-        if(currency == 20){
+        if(currency === 20){
             setAmount('U$: ' + parseFloat((event.target.value / dollar.low)).toFixed(2));
-        } else if(currency == 10){
+        } else if(currency === 10){
             setAmount('U$: ' + parseFloat((event.target.value)).toFixed(2));
         } else {
             setAmount(' <-- Selecione a moeda disponivel');

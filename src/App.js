@@ -3,6 +3,7 @@ import './App.css'
 import Crypto from './Crypto';
 import Cryptos from './components/Cryptos';
 import CurrencySelector from './components/CurrencySelector';
+import CurrencyInfo from './components/CurrencyInfo';
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
@@ -69,6 +70,7 @@ export default () => {
   });
 
   const[criptoList,setCriptoList] = useState([]);
+  const[amount,setAmount] = useState(2727);
 
   useEffect(() => {
     const loadAll = async () =>{
@@ -92,13 +94,14 @@ export default () => {
           />
         </header>
         <div className="app--page">
-          <section className="lists">
+          <section className="app--info">
             <CurrencySelector/> 
+            <CurrencyInfo/> 
           </section>
           <section className="lists">
             {criptoList.map((item,key)=>(
               <ul>
-                <Cryptos key={key} item={item}/>
+                <Cryptos key={key} item={item} amount={amount}/>
               </ul>
             ))}
           </section>
