@@ -3,11 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
 display: flex; 
 justify-content: space-between;
-min-width: 800px;
+min-width: 550px;
 height: 150px;
 padding 10px;
 align-items: center;
 text-align: center;
+margin: 50px ;
+
 
 .currency--select{
     width: 50%;

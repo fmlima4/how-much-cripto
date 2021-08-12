@@ -61,6 +61,7 @@ export default (item) => {
             <div className="currency--input">
                 <div className="input">
                 <TextField
+                id="currencyAmount"
                   fullWidth
                   required
                   label="Insira o valor Disponivel"
