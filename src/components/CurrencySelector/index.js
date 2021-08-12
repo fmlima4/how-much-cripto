@@ -43,7 +43,7 @@ export default (item) => {
     };
 
     return (
-        <Container className="card">
+        <Container>
             <div className="currency--select">
                 <FormControl>
                     <InputLabel>Escolha a moeda disponivel</InputLabel>

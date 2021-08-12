@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+background-color: #fff;
+border-radius: 10px;
 display: flex; 
 justify-content: space-between;
-min-width: 550px;
 height: 150px;
-padding 10px;
+width: 600px;
+padding: 34px;
+color: #444;
 align-items: center;
 text-align: center;
-margin: 50px ;
+margin: 30px ;
 
 
 .currency--select{

@@ -20,7 +20,7 @@ export default () => {
       console.log(currencyList.list)
 
     return (
-        <Container className="card">
+        <Container >
             <div className="currency--info">
                 <h3>Pares: </h3>
                <div>BTC-BRL: R$ {currencyList.list ? currencyList.list.BTCBRL.low : ''}</div>
