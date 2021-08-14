@@ -12,7 +12,7 @@ import TextField from '@material-ui/core/TextField';
 import BR_flag from '../../assets/brasil.png' 
 import US_flag from '../../assets/estados-unidos.png' 
 
-export default () => {
+ const CurrencySelector = () => {
     const[dollar,setDollar] = useState([]);
     const { setAmount } = useContext(MyContext)
     const[value,setValue] = useState('');
@@ -89,3 +89,5 @@ export default () => {
         </Container>
       );
 }
+
+export default CurrencySelector

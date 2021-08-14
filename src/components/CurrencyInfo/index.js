@@ -4,7 +4,7 @@ import Currency from '../../Currency';
 import { Container } from './styles';
 
 
-export default () => {
+const CurrencyInfo = () => {
     const[currencyList,setCurrencyList] = useState([]);
 
     useEffect(() => {
@@ -28,3 +28,5 @@ export default () => {
         </Container>
       );
 }
+
+export default CurrencyInfo;

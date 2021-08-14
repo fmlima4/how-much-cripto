@@ -7,10 +7,12 @@ const basicFetch = async (endpoint ) => {
     return json; 
 }
 
-export default {
+const Cripto = {
     getCriptosInfo: async () => {
         let info = {}
         info = await basicFetch(`/currencies/ticker?key=${API_KEY}&interval=1d,30d&convert=EUR&per-page=100&page=1`);
         return info
     }
 }
+
+export default Cripto;

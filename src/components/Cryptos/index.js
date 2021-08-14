@@ -3,7 +3,7 @@ import './index.css'
 import Currency from '../../Currency';
 import MyContext from '../../contexts/myContext'
 
-export default ({item}) => {
+const Cryptos = ({item}) => {
     const[price,setPrice] = useState('');
     const[circulating_supply,setCirculatingSupply] = useState('');
     const[market_cap,setMarketCap] = useState('');
@@ -40,3 +40,5 @@ export default ({item}) => {
         </div>
     )
 }
+
+export default Cryptos;

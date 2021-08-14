@@ -13,7 +13,7 @@ import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from './theme';
 import { withStyles } from '@material-ui/core/styles';
 
-export default () => {
+const App = () => {
   const [theme, setTheme] = useState("dark");
   const isDarkTheme = theme === "dark";
   const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
@@ -115,3 +115,4 @@ export default () => {
   );
 }
 
+export default App;

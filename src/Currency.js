@@ -6,7 +6,7 @@ const basicFetch = async (endpoint ) => {
     return json; 
 }
 
-export default {
+const Currency = {
     getCurrencyInfo: async () => {
         let info = {}
         info = await basicFetch(`last/USD-BRL,EUR-BRL,BTC-BRL`);
@@ -24,6 +24,4 @@ export default {
 
 }
 
-
-
-// Create our number formatter.
+export default Currency;
