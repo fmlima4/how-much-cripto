@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import MyContext from '../../contexts/myContext'
+
 import Currency from '../../Currency';
 
 import { Container } from './styles';
@@ -10,9 +12,11 @@ import TextField from '@material-ui/core/TextField';
 import BR_flag from '../../assets/brasil.png' 
 import US_flag from '../../assets/estados-unidos.png' 
 
-export default (item) => {
+export default () => {
     const[dollar,setDollar] = useState([]);
-    const[amount,setAmount] = useState('');
+    const { amount, setAmount } = useContext(MyContext)
+    const[value,setValue] = useState('');
+    const[money,setMoney] = useState(0);
 
 
     useEffect(() => {
@@ -30,15 +34,21 @@ export default (item) => {
 
     const handleChange = (event) => {
         setCurrency(event.target.value);
+        setMoney(0)
+        setValue('')
     };
 
     const handleAmountChange = (event) => {
+        setMoney(event.target.value)
         if(currency === 20){
-            setAmount('U$: ' + parseFloat((event.target.value / dollar.low)).toFixed(2));
+            setValue('U$: ' + parseFloat((event.target.value / dollar.low)).toFixed(2));
+            setAmount(parseFloat((event.target.value / dollar.low)).toFixed(2))
         } else if(currency === 10){
-            setAmount('U$: ' + parseFloat((event.target.value)).toFixed(2));
+            setValue('U$: ' + parseFloat((event.target.value)).toFixed(2));
+            setAmount(parseFloat(event.target.value).toFixed(2))
         } else {
-            setAmount(' <-- Selecione a moeda disponivel');
+            setValue(' <-- Selecione a moeda disponivel');
+            setAmount(0);
         }
     };
 
@@ -69,10 +79,11 @@ export default (item) => {
                   margin="normal"
                   type="number"
                   onChange={handleAmountChange}
+                  value={money}
                 />
                 </div>
                 <div className="Dollar">
-                    <a>{amount}</a>
+                    <a>{value}</a>
                 </div>
             </div>
         </Container>

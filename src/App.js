@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
+import MyContext from './contexts/myContext'
 import Crypto from './Crypto';
 import Cryptos from './components/Cryptos';
 import CurrencySelector from './components/CurrencySelector';
@@ -70,7 +71,7 @@ export default () => {
   });
 
   const[criptoList,setCriptoList] = useState([]);
-  const[amount,setAmount] = useState(2727);
+  const[amount,setAmount] = useState(0);
 
   useEffect(() => {
     const loadAll = async () =>{
@@ -83,32 +84,34 @@ export default () => {
   } ,[])
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <>
-        <GlobalStyles />
-        <header className={isDarkTheme ? 'darkTheme': 'lightTheme'}>
-          <h3>How much crypto can i buy ?</h3>
-          <FormControlLabel
-            control={<IOSSwitch checked={isDarkTheme} onChange={toggleTheme} name="isDarkmode" />}
-            label={isDarkTheme ? ' darkTheme': 'lightTheme'}
-          />
-        </header>
-        <div className="app--page">
-          <section className="app--info">
-            <CurrencySelector/> 
-            <CurrencyInfo/> 
-          </section>
-          <section className="lists">
-            {criptoList.map((item,key)=>(
-              <ul>
-                <Cryptos key={key} item={item} amount={amount}/>
-              </ul>
-            ))}
-          </section>
+    <MyContext.Provider value={{amount, setAmount}}>
+      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+        <>
+          <GlobalStyles />
+          <header className={isDarkTheme ? 'darkTheme': 'lightTheme'}>
+            <h3>How much crypto can i buy ?</h3>
+            <FormControlLabel
+              control={<IOSSwitch checked={isDarkTheme} onChange={toggleTheme} name="isDarkmode" />}
+              label={isDarkTheme ? ' darkTheme': 'lightTheme'}
+            />
+          </header>
+          <div className="app--page">
+            <section className="app--info">
+              <CurrencySelector amount={amount}/> 
+              <CurrencyInfo/> 
+            </section>
+            <section className="lists">
+              {criptoList.map((item,key)=>(
+                <ul>
+                  <Cryptos key={key} item={item} amount={amount}/>
+                </ul>
+              ))}
+            </section>
 
-        </div>
-      </>
-    </ThemeProvider>
+          </div>
+        </>
+      </ThemeProvider>
+    </MyContext.Provider>
   );
 }
 

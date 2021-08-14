@@ -17,8 +17,6 @@ export default () => {
         loadInfo();
       } ,[])
     
-      console.log(currencyList.list)
-
     return (
         <Container >
             <div className="currency--info">

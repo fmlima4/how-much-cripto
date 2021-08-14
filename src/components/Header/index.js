@@ -10,7 +10,6 @@ export default ({darkMode}) => {
 
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
-        console.log(state.isDarkmode)
     };
 
     return (
