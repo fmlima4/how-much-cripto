@@ -14,7 +14,7 @@ import US_flag from '../../assets/estados-unidos.png'
 
 export default () => {
     const[dollar,setDollar] = useState([]);
-    const { amount, setAmount } = useContext(MyContext)
+    const { setAmount } = useContext(MyContext)
     const[value,setValue] = useState('');
     const[money,setMoney] = useState(0);
 
@@ -83,7 +83,7 @@ export default () => {
                 />
                 </div>
                 <div className="Dollar">
-                    <a>{value}</a>
+                    <p>{value}</p>
                 </div>
             </div>
         </Container>
