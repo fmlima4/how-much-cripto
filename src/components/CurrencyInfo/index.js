@@ -20,7 +20,7 @@ export default () => {
     return (
         <Container >
             <div className="currency--info">
-                <h3>Pares: </h3>
+                <h3>Pairs: </h3>
                <div>BTC-BRL: R$ {currencyList.list ? currencyList.list.BTCBRL.low : ''}</div>
                <div>USD-BRL: R$ {currencyList.list ? currencyList.list.USDBRL.low : ''}</div>
                <div>EUR-BRL: R$ {currencyList.list ? currencyList.list.EURBRL.low : ''}</div>

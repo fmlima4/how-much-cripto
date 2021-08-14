@@ -47,7 +47,7 @@ export default () => {
             setValue('U$: ' + parseFloat((event.target.value)).toFixed(2));
             setAmount(parseFloat(event.target.value).toFixed(2))
         } else {
-            setValue(' <-- Selecione a moeda disponivel');
+            setValue(' <-- Select one currency');
             setAmount(0);
         }
     };
@@ -56,7 +56,7 @@ export default () => {
         <Container>
             <div className="currency--select">
                 <FormControl>
-                    <InputLabel>Escolha a moeda disponivel</InputLabel>
+                    <InputLabel>Select one currency</InputLabel>
                         <Select
                             fullWidth
                             id="currencySelector"
@@ -64,7 +64,7 @@ export default () => {
                             onChange={handleChange}
                         >                            
                             <MenuItem value={20} style={{ alignItems: 'center' }}><img src={BR_flag} alt="br_flag" style={{ width: 30,height: 30 }}/>&nbsp; - Reais</MenuItem>
-                            <MenuItem value={10} style={{ alignItems: 'center' }} ><img src={US_flag} alt="us_flag" style={{ width: 30,height: 30 }}/>&nbsp; - Dolares</MenuItem>
+                            <MenuItem value={10} style={{ alignItems: 'center' }} ><img src={US_flag} alt="us_flag" style={{ width: 30,height: 30 }}/>&nbsp; - Dollares</MenuItem>
                         </Select>
                 </FormControl>
             </div>
@@ -74,7 +74,7 @@ export default () => {
                 id="currencyAmount"
                   fullWidth
                   required
-                  label="Insira o valor Disponivel"
+                  label="Insert avaible value"
                   variant="outlined"
                   margin="normal"
                   type="number"

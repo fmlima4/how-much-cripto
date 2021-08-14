@@ -27,14 +27,14 @@ export default ({item}) => {
         <div className="card">
             <div className="card--header">
                 <img src={item.logo_url} alt="" />
-                <p>Voce pode comprar: {parseFloat(amount / item.price).toFixed(2)}</p>
+                <p>You can buy: {parseFloat(amount / item.price).toFixed(2)}</p>
             </div>
             <div className="info">
                 <h2>{item.name}</h2>
                 <p className="title">
-                    Preço: {price}
+                    Price: {price}
                 </p>
-                <p>Circulação: {circulating_supply}</p>
+                <p>Supply: {circulating_supply}</p>
                 <p>Marketcap: {market_cap}</p>
             </div>
         </div>
